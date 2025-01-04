@@ -9,7 +9,7 @@
 
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+ background-color: rgb(59, 56, 56);
+ color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
