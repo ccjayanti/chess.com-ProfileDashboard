@@ -29,7 +29,7 @@ export default function Home() {
     axios
       .get(`https://api.chess.com/pub/player/${username}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         const { name, verified, joined, country, followers, league, title } = response.data; // Destructure joined and country
 
         setName(name);
@@ -43,7 +43,7 @@ export default function Home() {
         return axios.get(country);
       })
       .then((countryResponse) => {
-        const { name } = countryResponse.data; // Destructure name and flag
+        const { name } = countryResponse.data; // Destructure name of the flag
         setCountryName(name);
       })
       .catch((error) => {
@@ -67,7 +67,7 @@ export default function Home() {
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyPress}
         placeholder="Enter a username"
-        className="text-black outline-none bg-green-200"
+        className="text-black outline-none bg-green-200  px-2  rounded-sm"
       />
       {error && <div>{error} </div>}
       {name && <div>Name: {name}{verifiedStatus && (<span>✅</span>)}</div>}
